@@ -5,5 +5,5 @@ This is an unofficial pytorch implementation of the paper [Image-to-Image Transl
 
 
 ## References
-- pytorch-CycleGAN-and-pix2pix("https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix")
-- pytorch-pix2pix("https://github.com/znxlwm/pytorch-pix2pix")
+- [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
+- [pytorch-pix2pix](https://github.com/znxlwm/pytorch-pix2pix)
