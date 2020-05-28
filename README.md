@@ -43,7 +43,7 @@ The models is trained for 200 epochs on both Facades and Maps datasets.
     <tr>
       <td><img src="plots/facades_loss.png"/></td>
       <td><img src="plots/maps_AtoB_loss.png"/></td>
-      <td><img src="plots/maps_AtoB_loss.png"/></td>
+      <td><img src="plots/maps_BtoA_loss.png"/></td>
     </tr>
     <tr>
       <td align="center"><em>Facades Training Loss</em></td>
@@ -61,3 +61,6 @@ The models is trained for 200 epochs on both Facades and Maps datasets.
 ## Acknowledgement
 - [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 - [pytorch-pix2pix](https://github.com/znxlwm/pytorch-pix2pix)
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
