@@ -22,7 +22,7 @@ parser.add_argument('--lr', required=False, help='learning rate', default=0.0002
 parser.add_argument('--beta1', required=False, help='beta1', default=0.5)
 parser.add_argument('--beta2', required=False, help='beta2', default=0.999)
 parser.add_argument('--batch_size', required=False, help='input batch size', default=1)
-parser.add_argument('--epochs', required=False, help='number of epochs', default=1)  # TODO: change it to 200
+parser.add_argument('--epochs', required=False, help='number of epochs', default=200)  
 
 # --------------------------
 # Dataset
