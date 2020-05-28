@@ -86,7 +86,7 @@ def train(opt):
     torch.save(model.netG.state_dict(), gen_path)
     torch.save(model.netD.state_dict(), disc_path)
 
-    plot_loss(losses_G, losses_D, opt.epochs)
+    plot_loss(loss_G, loss_D, opt.epochs)
 
     return gen_path, disc_path
 
