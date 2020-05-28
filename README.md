@@ -34,10 +34,29 @@ This is an unofficial PyTorch implementation of the paper [Image-to-Image Transl
 </div>
 </center>
 
-## TODO List
+## Training Loss Curves
+The models is trained for 200 epochs on both Facades and Maps datasets. 
 
-- [ ] Train and Evaluation
-- [ ] Modified Model for deblurring, denoising and Inpainting 
+<center>
+<div>
+  <table>
+    <tr>
+      <td><img src="plots/facades_loss.png"/></td>
+      <td><img src="plots/maps_AtoB_loss.png"/></td>
+      <td><img src="plots/maps_AtoB_loss.png"/></td>
+    </tr>
+    <tr>
+      <td align="center"><em>Facades Training Loss</em></td>
+      <td align="center"><em>Maps(AtoB) Training Loss</em></td>
+      <td align="center"><em>Maps(BtoA) Training Loss</em></td>
+    </tr>
+  </table>
+</div>
+</center>
+
+## TODO List
+* Models
+  - [ ] Modified Model for deblurring, denoising and Inpainting 
 
 ## Acknowledgement
 - [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
