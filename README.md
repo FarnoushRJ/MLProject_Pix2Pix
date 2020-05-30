@@ -4,6 +4,34 @@ This is an unofficial PyTorch implementation of the paper [Image-to-Image Transl
 
 ## Getting Started
 
+### Installation
+- Clone this repository
+```
+git clone "https://github.com/FarnoushRJ/MLProject_Pix2Pix.git"
+```
+- Install the requirements
+
+  **Requirements**
+   * Pillow 7.0.0
+   * numpy 1.18.4
+   * matplotlib 3.2.1
+   * barbar 0.2.1
+   * torch 1.5.0
+   * torchvision 0.6.0
+   * Python 3.6.9
+
+
+### Data
+  * Facades and Maps datasets can be downloaded from [this link](http://efrosgans.eecs.berkeley.edu/pix2pix/datasets/).
+  
+**Data Directory Structure**
+```
+|__ DATASET_ROOT
+    |__ train       
+    |__ test
+    |__ val     
+```
+
 ### How to train
 
 ```python
@@ -19,9 +47,9 @@ usage: train.py [-h] [--netD_name NETD_NAME] [--netD_layers NETD_LAYERS]
                 [--netD_lambda NETD_LAMBDA] [--netG_in NETG_IN]
                 [--netG_out NETG_OUT] [--l1_lambda L1_LAMBDA] [--lr LR]
                 [--beta1 BETA1] [--beta2 BETA2] [--batch_size BATCH_SIZE]
-                [--epochs EPOCHS] [--dataset_name DATASET_NAME]
-                [--direction DIRECTION] --root ROOT
-                [--train_folder TRAIN_FOLDER] [--test_folder TEST_FOLDER]
+                [--epochs EPOCHS] [--work_dir WORK_DIR]
+                [--dataset_name DATASET_NAME] [--direction DIRECTION] --root
+                ROOT [--train_folder TRAIN_FOLDER] [--test_folder TEST_FOLDER]
                 [--no_crop NO_CROP] [--no_flip NO_FLIP]
                 [--crop_size CROP_SIZE] [--scale SCALE]
 
@@ -45,6 +73,7 @@ optional arguments:
   --batch_size BATCH_SIZE
                         input batch size
   --epochs EPOCHS       number of epochs
+  --work_dir WORK_DIR   working directory
   --dataset_name DATASET_NAME
                         facades | maps
   --direction DIRECTION
@@ -60,6 +89,27 @@ optional arguments:
                         crop size
   --scale SCALE         scale
 ```
+
+## Training Loss Curves
+The models is trained for 200 epochs on both Facades and Maps datasets. 
+
+<center>
+<div>
+  <table>
+    <tr>
+      <td><img src="plots/facades_loss.png"/></td>
+      <td><img src="plots/maps_AtoB_loss.png"/></td>
+      <td><img src="plots/maps_BtoA_loss.png"/></td>
+    </tr>
+    <tr>
+      <td align="center"><em>Facades Training Loss</em></td>
+      <td align="center"><em>Maps(AtoB) Training Loss</em></td>
+      <td align="center"><em>Maps(BtoA) Training Loss</em></td>
+    </tr>
+  </table>
+</div>
+</center>
+
 ## Qualitative Results
 ### Facades Dataset
 
@@ -87,26 +137,6 @@ optional arguments:
     <tr><td><img src="results/Maps_BtoA_2.png"/></td></tr>
     <tr><td><img src="results/Maps_BtoA_3.png"/></td></tr>
     <tr><td align="center"><em>Input, Fake Target, Real Target (BtoA)</em></td></tr>
-  </table>
-</div>
-</center>
-
-## Training Loss Curves
-The models is trained for 200 epochs on both Facades and Maps datasets. 
-
-<center>
-<div>
-  <table>
-    <tr>
-      <td><img src="plots/facades_loss.png"/></td>
-      <td><img src="plots/maps_AtoB_loss.png"/></td>
-      <td><img src="plots/maps_BtoA_loss.png"/></td>
-    </tr>
-    <tr>
-      <td align="center"><em>Facades Training Loss</em></td>
-      <td align="center"><em>Maps(AtoB) Training Loss</em></td>
-      <td align="center"><em>Maps(BtoA) Training Loss</em></td>
-    </tr>
   </table>
 </div>
 </center>
