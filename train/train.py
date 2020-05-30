@@ -1,13 +1,15 @@
 import torch
+from torch.utils.data import DataLoader
 from barbar import Bar
 from torch import mean, FloatTensor
 from torch.optim import lr_scheduler
 import matplotlib.pylab as plt
 import numpy as np
+import os
 
 import sys
 sys.path.insert(0, '../')
-from datasets.general_dataset import load_data
+from datasets.general_dataset import GeneralDataset
 from models.general_model import Pix2Pix
 
 
@@ -36,11 +38,22 @@ def plot_loss(loss_G: list,
     plt.ylabel('Loss Values')
     plt.grid(True)
     plt.legend()
+    plt.show()
 
 
 # ----------------------------------
 def train(opt):
-    train_dataset, _ = load_data(opt)
+    train_dataset = GeneralDataset(opt.dataset_name,
+                                   opt.root,
+                                   opt.train_folder,
+                                   opt.no_crop,
+                                   opt.no_flip,
+                                   opt.crop_size,
+                                   opt.scale)
+
+    train_dataset = DataLoader(train_dataset,
+                               batch_size=opt.batch_size,
+                               shuffle=True)
 
     device = torch.cuda.current_device()
     torch.cuda.manual_seed(123)
@@ -81,8 +94,8 @@ def train(opt):
             scheduler.step()
 
     # save the models
-    gen_path = '/home/pml_03/MS2/Pix2Pix/train/trained_models/{}_generator_param.pkl'.format(opt.dataset_name)
-    disc_path = '/home/pml_03/MS2/Pix2Pix/train/trained_models/{}_discriminator_param.pkl'.format(opt.dataset_name)
+    gen_path = os.path.join(opt.work_dir, '{}_generator_param.pkl'.format(opt.dataset_name))
+    disc_path = os.path.join(opt.work_dir, '{}_discriminator_param.pkl'.format(opt.dataset_name))
     torch.save(model.netG.state_dict(), gen_path)
     torch.save(model.netD.state_dict(), disc_path)
 
@@ -93,5 +106,9 @@ def train(opt):
 
 # ----------------------------------
 if __name__ == "__main__":
-    from arguments import opt
+    import sys
+    sys.path.insert(0, '../')
+    from arguments import arguments_parser
+    parser = arguments_parser()
+    opt = parser.parse_args()
     train(opt)
