@@ -34,8 +34,8 @@ def arguments_parser():
     parser.add_argument('--root', required=True, help='path to the dataset')
     parser.add_argument('--train_folder', required=False, help='train | test | val', default='train')
     parser.add_argument('--test_folder', required=False, help='train | test | val', default='val')
-    parser.add_argument('--no_crop', required=False, help='True | False', default=False)
-    parser.add_argument('--no_flip', required=False, help='True | False', default=False)
+    parser.add_argument('--no_crop', required=False, help='True | False', action='store_true')
+    parser.add_argument('--no_flip', required=False, help='True | False', action='store_true')
     parser.add_argument('--crop_size', required=False, help='crop size', default=256, type=int)
     parser.add_argument('--scale', required=False, help='scale', default=286, type=int)
     
