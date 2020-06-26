@@ -1,4 +1,14 @@
-# Image-to-Image Translation with Conditional Adversarial Nets
+<p align="center">
+    <img src="logo.svg" height="300" title="My ML Repository Logo">
+</p>
+ 
+<p align="center">
+ <img src="https://img.shields.io/github/last-commit/FarnoushRJ/MLProject_Pix2Pix/master?color=green&style=for-the-badge">
+ <img src="https://img.shields.io/static/v1?label=python&message=3.6.9&color=red&style=for-the-badge">
+ <img src="https://img.shields.io/github/repo-size/FarnoushRJ/MLProject_Pix2Pix?color=yellow&style=for-the-badge">
+</p>
+
+ ***
 
 This is an unofficial PyTorch implementation of the paper [Image-to-Image Translation with Conditional Adversarial Nets](https://phillipi.github.io/pix2pix/).
 
@@ -13,14 +23,13 @@ git clone "https://github.com/FarnoushRJ/MLProject_Pix2Pix.git"
 ```
 - Install the requirements
 
-  **Requirements**
+  **Other Requirements**
    * Pillow 7.0.0
    * numpy 1.18.4
    * matplotlib 3.2.1
    * barbar 0.2.1
    * torch 1.5.0
    * torchvision 0.6.0
-   * Python 3.6.9
 
 
 ### Data
@@ -64,41 +73,45 @@ The models is trained for 200 epochs on both Facades and Maps datasets.
 ## Qualitative Results
 ### Facades Dataset
 
-<center>
-  <table>
-    <tr><td><img src="results/Facades_1.png"/></td></tr>
-    <tr><td><img src="results/Facades_2.png"/></td></tr>
-    <tr><td><img src="results/Facades_3.png"/></td></tr>
-    <tr><td align="center"><em>Input, Fake Target, Real Target</em></td></tr>
-  </table>
-</center>
+  <p align="center">
+    <img src="results/Facades_1.png"/>
+    </br>
+    <img src="results/Facades_2.png"/>
+    </br>
+    <img src="results/Facades_3.png"/>
+    </br>
+    <em>Input, Fake Target, Real Target</em>
+  </p>
 
 ### Maps Dataset
 
-<center>
-<div>
-  <table>
-    <tr><td><img src="results/Maps_AtoB_1.png"/></td></tr>
-    <tr><td><img src="results/Maps_AtoB_2.png"/></td></tr>
-    <tr><td><img src="results/Maps_AtoB_3.png"/></td></tr>
-    <tr><td align="center"><em>Input, Fake Target, Real Target (AtoB)</em></td></tr>
-  </table>
-  <table>
-    <tr><td><img src="results/Maps_BtoA_1.png"/></td></tr>
-    <tr><td><img src="results/Maps_BtoA_2.png"/></td></tr>
-    <tr><td><img src="results/Maps_BtoA_3.png"/></td></tr>
-    <tr><td align="center"><em>Input, Fake Target, Real Target (BtoA)</em></td></tr>
-  </table>
-</div>
-</center>
+<p align="center">
+    <img src="results/Maps_AtoB_1.png"/>
+    </br>
+    <img src="results/Maps_AtoB_2.png"/>
+    </br>
+    <img src="results/Maps_AtoB_3.png"/>
+    </br>
+    <em>Input, Fake Target, Real Target (AtoB)</em>
+</p>
+</br>
+<p align="center">
+    <img src="results/Maps_BtoA_1.png"/></td></tr>
+    </br>
+    <img src="results/Maps_BtoA_2.png"/></td></tr>
+    </br>
+    <img src="results/Maps_BtoA_3.png"/></td></tr>
+    </br>
+    <em>Input, Fake Target, Real Target (BtoA)</em>
+</p>
 
 ## TODO List
 * Models
   - [ ] Modified Model for deblurring, denoising and Inpainting 
 
-## Acknowledgement
+## References
 - [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 - [pytorch-pix2pix](https://github.com/znxlwm/pytorch-pix2pix)
 
 ## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/github/license/FarnoushRJ/MLAlgorithms?color=blueviolet&style=for-the-badge)](https://opensource.org/licenses/MIT)
